@@ -71,6 +71,7 @@ export default {
   overflow: hidden;
   padding: 50px;
   background-color: #fffbb6;
+  margin: auto
 }
 .bg {
   width: 100%;
@@ -85,7 +86,7 @@ export default {
 }
 
 .title {
-    background-image: url(/img/title.cf52bef5.png);
+    background-image: url('../assets/title.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 559px 62px;
@@ -96,7 +97,7 @@ export default {
     left: 179px;
 }
 .title-logo {
-  background-image: url(/img/title02.91526654.png);
+  background-image: url('../assets/title02.png');
     background-position: center;
     background-repeat: no-repeat;
     height: 200px;

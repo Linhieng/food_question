@@ -27,6 +27,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   width: 100vw;
+  background-color: #fffbb6;
 }
 .container {
   width: 100vw;
