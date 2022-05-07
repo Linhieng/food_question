@@ -65,6 +65,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .container {
+  width: max-content;
   min-height: 700px;
   height: 100vh;
   overflow: hidden;
@@ -74,6 +75,8 @@ export default {
 .bg {
   width: 100%;
   height: 100%;
+  width: 1386px;
+  height: 681px;
   padding: 100px 150px;
   background-image: url('../assets/bg.png');
   background-repeat: no-repeat;
