@@ -1,15 +1,16 @@
 <template>
 <div class="container">
-  <div class="bg">
+  <button class="returnHome" v-if="dialogShowReturn" @click="returnHome">返回首页</button>
+  <div  class="bg1" v-if="dialogShow">
     <div class="title">
       <div class="title-logo"></div>
     </div>
     <ul class="nav">
       <li> <span>首页</span> </li>
-      <li> <span>3DP·多维周历软糖</span> </li>
-      <li> <span>成长问卷</span> </li>
-      <li> <span>儿童贴士</span> </li>
-      <li> <span>体验店地址</span> </li>
+      <li @click="ruantang"> <span>3DP·多维周历软糖</span> </li>
+      <li @click="question"> <span>成长问卷</span> </li>
+      <li @click="notice"> <span>儿童贴士</span> </li>
+      <li @click="address"> <span>体验店地址</span> </li>
       <li class="icon"> <svg t="1651884056509" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3989" width="40" height="40"><path d="M512.010745 1022.082324c-282.335297 0-511.220241-228.798986-511.220241-511.036046C0.790504 228.798986 229.675448 0 512.010745 0c282.312784 0 511.198751 228.798986 511.198751 511.046279C1023.208473 793.285385 794.322505 1022.082324 512.010745 1022.082324zM512.010745 95.826486c-229.385341 0-415.371242 185.884594-415.371242 415.220816 0 107.22714 41.021276 204.6551 107.802238 278.339286 60.140729-29.092595 38.062897-4.88424 116.77254-37.274952 80.539314-33.089629 99.610672-44.639686 99.610672-44.639686l0.776689-76.29464c0 0-30.169113-22.890336-39.543621-94.683453-18.895349 5.426593-25.108864-21.988804-26.237571-39.429011-1.001817-16.863063-10.926864-69.487607 12.105712-64.739467-4.714372-35.144428-8.094352-66.844407-6.417153-83.633792 5.763261-58.938344 62.97324-120.518864 151.105486-125.017318 103.665011 4.486174 144.737452 66.028832 150.500713 124.9682 1.680269 16.800641-2.028193 48.511877-6.739495 83.594907 23.025413-4.686742 13.028735 47.861054 11.901051 64.726164-1.028423 17.440208-7.394411 44.756343-26.208918 39.34203-9.42158 71.79107-39.593763 94.498234-39.593763 94.498234l0.725524 75.924203c0 0 19.070334 10.788717 99.609649 43.892673 78.70862 32.387641 56.605206 9.609869 116.77561 38.765909 66.75231-73.686233 107.772562-171.101913 107.772562-278.339286C927.356404 281.712103 741.398132 95.826486 512.010745 95.826486z" p-id="3990" fill="#f67c48"></path></svg> </li>
       <li> <span>登录</span> </li>
       <li> <span>注册</span> </li>
@@ -19,7 +20,7 @@
     </div>
     <div class="user">
       <div class="my-candy"> <span>我的软糖</span> </div>
-      <div class="growth"> <span>成长问卷</span> </div>
+      <div class="growth" @click="question"> <span>成长问卷</span> </div>
       <div class="upload-img">
         <span>图片上传</span>
         <input type="file">
@@ -53,17 +54,142 @@
       </ul>
     </div>
   </div>
+  <div class="bg2" v-if="dialogShowQuestion">
+    <div class="chengzhang">
+      <img src="../assets/chengzhang.jpg" alt="">
+    </div>
+    <h4>请完成我们2分钟的咨询问卷，我们营养专家将推荐最适合你生活的七种营养素，以满足您孩子的身心健康，并最后的点晴之笔——我们将在每个单独的糖果包装纸上打印您孩子的名字！</h4>
+    <ul>
+      <li>
+        <p>1.孩子姓名</p>
+        <input type="text">
+      </li>
+      <li>
+        <p>2.性别</p>
+        <label for="">男孩</label>
+        <label for="">女孩</label>
+      </li>
+      <li>
+        <p>1.孩子姓名</p>
+        <input type="text">
+      </li>
+      <li>
+        <p>1.孩子姓名</p>
+        <input type="text">
+      </li>
+      <li>
+        <p>1.孩子姓名</p>
+        <input type="text">
+      </li>
+      <li>
+        <p>1.孩子姓名</p>
+        <input type="text">
+      </li>
+      <li>
+        <p>1.孩子姓名</p>
+        <input type="text">
+      </li>
+      <li>
+        <p>1.孩子姓名</p>
+        <input type="text">
+      </li>
+      <li>
+        <p>1.孩子姓名</p>
+        <input type="text">
+      </li>
+      <li>
+        <p>1.孩子姓名</p>
+        <input type="text">
+      </li>
+      <li>
+        <p>1.孩子姓名</p>
+        <input type="text">
+      </li>
+    </ul>
+  </div>
+  <div class="bg3" v-if="dialogShowNotice">
+    <div class="notice">
+      <img src="../assets/notice.jpg" alt="">
+    </div>
+  </div>
+  <div class="bg4" v-if="dialogShowRuan">
+    <img src="../assets/ruantang.jpg" alt="">
+  </div>
+  <div class="bg5" v-if="dialogShowAddress">
+    <img src="../assets/address.jpg" alt="">
+  </div>
 </div>
 </template>
 
 <script>
 export default {
   name: 'HelloWorld',
+  data(){
+    return {
+      dialogShow: true,
+      dialogShowQuestion:false,
+      dialogShowNotice:false,
+      dialogShowRuan:false,
+      dialogShowAddress:false,
+      dialogShowReturn:false
+    }
+  },
+  methods:{
+    returnHome(){
+      this.dialogShow = true
+      this.dialogShowRuan = false
+      this.dialogShowQuestion = false
+      this.dialogShowNotice = false
+      this.dialogShowAddress = false
+    },
+    ruantang(){
+      this.dialogShowRuan = !this.dialogShowRuan
+      if(this.dialogShowRuan){
+        this.dialogShow = false
+        this.dialogShowReturn = true
+      }
+    },
+    question(){
+      this.dialogShowQuestion = !this.dialogShowQuestion
+      if(this.dialogShowQuestion){
+        this.dialogShow = false
+        this.dialogShowReturn = true
+      }
+    },
+    notice(){
+      this.dialogShowNotice = !this.dialogShowNotice
+      if(this.dialogShowNotice){
+        this.dialogShow = false
+        this.dialogShowReturn = true
+      }
+    },
+    address(){
+      this.dialogShowAddress = !this.dialogShowAddress
+      if(this.dialogShowAddress){
+        this.dialogShow = false
+        this.dialogShowReturn = true
+      }
+    }
+  }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.returnHome {
+  position: absolute;
+  right: 100px;
+  top: 20px;
+  width: 100px;
+  height: 60px;
+  background-color: #e78945;
+  border: 0;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 17px;
+  cursor: pointer;
+}
+
 .container {
   width: max-content;
   min-height: 700px;
@@ -73,7 +199,10 @@ export default {
   background-color: #fffbb6;
   margin: auto
 }
-.bg {
+.bg1,
+.bg2,
+.bg4,
+.bg5 {
   width: 100%;
   height: 100%;
   width: 1386px;
@@ -84,6 +213,7 @@ export default {
   background-position: center;
   position: relative;
 }
+
 
 .title {
     background-image: url('../assets/title.png');
@@ -253,5 +383,33 @@ export default {
   --side: 35px;
   width: var(--side);
   height: var(--side);
+}
+
+img {
+  width: 100%;
+}
+
+.notice {
+  width: 1060px;
+}
+.notice img {
+  width: 100%;
+}
+.chengzhang {
+  width: 194px;
+}
+.chengzhang img {
+  width: 100%;
+}
+.bg2 h4 {
+  text-indent: 2em;
+  text-align: left;
+  font-size: 22px;
+  font-weight: 800px;
+}
+.bg2 ul {
+  list-style: 0;
+  text-align: left;
+  
 }
 </style>
