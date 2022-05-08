@@ -1,4 +1,3 @@
-
 .bg2 > h4 { padding-bottom: 16px; }
 
 .options-wrap {
@@ -14,6 +13,7 @@
     font-weight: bold;
     min-width: 220px;
     padding-right: 20px;
+    
   }
   .option-box {
     border-radius: 4px;
@@ -49,6 +49,32 @@
       align-items: center;
       justify-content: flex-start;
       margin: 14px 0;
+
+      input[type="checkbox"] {
+        position: absolute;
+        opacity: 0;
+      }
+      input[type="checkbox"]:checked ~ .option-check1 {
+        background-color: #f0a338;
+        color: #fff;
+        border: 4px inset #f0a338;
+      }
+      input[type="checkbox"]:checked ~ .option-check2 {
+        background-color: #fef0b5;
+        color: #000;
+        border: 4px outset #fef0b5;
+      }
+      .option-check1 {
+        background-color: #fef0b5;
+        color: #000;
+        border: 4px outset #fef0b5;
+      }
+      .option-check2 {
+        background-color: #f0a338;
+        color: #fff;
+        border: 4px inset #f0a338;
+      }
+
     }
     .option-wrap {
       flex-wrap: wrap;

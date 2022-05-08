@@ -54,6 +54,35 @@
   margin: 14px 0;
 }
 
+.options-wrap ul li input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.options-wrap ul li input[type="checkbox"]:checked ~ .option-check1 {
+  background-color: #f0a338;
+  color: #fff;
+  border: 4px inset #f0a338;
+}
+
+.options-wrap ul li input[type="checkbox"]:checked ~ .option-check2 {
+  background-color: #fef0b5;
+  color: #000;
+  border: 4px outset #fef0b5;
+}
+
+.options-wrap ul li .option-check1 {
+  background-color: #fef0b5;
+  color: #000;
+  border: 4px outset #fef0b5;
+}
+
+.options-wrap ul li .option-check2 {
+  background-color: #f0a338;
+  color: #fff;
+  border: 4px inset #f0a338;
+}
+
 .options-wrap ul .option-wrap {
   flex-wrap: wrap;
   width: 730px;

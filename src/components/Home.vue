@@ -71,8 +71,9 @@
         </li>
         <li> 
           <p class="option-title">2. 性别</p> 
-          <div class="option-box">男孩</div> 
-          <div class="option-box">女孩</div> 
+          <input type="checkbox" id="test">
+          <label for="test" class="option-box option-check1">男孩</label>
+          <label for="test" class="option-box option-check2">女孩</label>
         </li>
         <li> 
           <p class="option-title">3. 年龄</p> 
@@ -121,23 +122,27 @@
         </li>
         <li class="option-wrap"> 
           <p class="option-title">5. 孩子是否遵循特定的饮食习惯？</p> 
-          <div class="option-box"> 是 </div> 
-          <div class="option-box"> 否 </div> 
+          <input type="checkbox" id="check01">
+          <label for="check01" class="option-box option-check1"> 是 </label> 
+          <label for="check01" class="option-box option-check2"> 否 </label> 
         </li>
         <li class="option-wrap"> 
           <p class="option-title">6. 孩子在两餐之间会不会饿或暴躁</p> 
-          <div class="option-box"> 是 </div> 
-          <div class="option-box"> 否 </div> 
+          <input type="checkbox" id="check02">
+          <label for="check02" class="option-box option-check1"> 是 </label> 
+          <label for="check02" class="option-box option-check2"> 否 </label> 
         </li>
         <li class="option-wrap"> 
           <p class="option-title">7. 孩子有无挑食的习惯</p> 
-          <div class="option-box"> 是 </div> 
-          <div class="option-box"> 否 </div> 
+          <input type="checkbox" id="check03">
+          <label for="check03" class="option-box option-check1"> 是 </label> 
+          <label for="check03" class="option-box option-check2"> 否 </label> 
         </li>
         <li class="option-wrap"> 
           <p class="option-title">8. 孩子有无挑食的习惯</p> 
-          <div class="option-box"> 是 </div> 
-          <div class="option-box"> 否 </div> 
+          <input type="checkbox" id="check04">
+          <label for="check04" class="option-box option-check1"> 是 </label> 
+          <label for="check04" class="option-box option-check2"> 否 </label> 
         </li>
         <li class="option-wrap"> 
           <p class="option-title">9. 孩子是否患有以下任何一种疾病？</p> 
@@ -277,6 +282,9 @@ export default {
         this.dialogShow = false
         this.dialogShowReturn = true
       }
+    },
+    addClass(){
+
     }
   }
 }

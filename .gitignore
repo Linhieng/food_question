@@ -26,3 +26,4 @@ pnpm-debug.log*
 *.pptx
 *.zip
 ignore
+questionnaire.min.css
