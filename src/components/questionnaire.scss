@@ -1,5 +1,23 @@
 .bg2 > h4 { padding-bottom: 16px; }
 
+// 选项选中的样式
+@mixin active {
+  background-color: #f0a338;
+  color: #fff;
+  // border: 4px inset #f0a338;
+  outline: 3px inset #f0a338;
+  border: transparent;
+}
+// 选项未选中的样式
+@mixin no-active {
+  background-color: #fef0b5;
+  color: #000;
+  // border: 4px outset #fef0b5;
+  outline: 3px outset #fef0b5;
+  border: transparent;
+}
+
+// 这个 wrap 是 “盒子” 的意思
 .options-wrap {
 
   width: 100%;
@@ -8,13 +26,14 @@
   overflow: auto;
   padding: 24px;
   
+  // 选项标题（通用，故优先级低，方便后面覆盖）
   .option-title {
     font-size: 24px;
     font-weight: bold;
     min-width: 220px;
     padding-right: 20px;
-    
   }
+  // 选项（通用，优先级低，方便后面覆盖）
   .option-box {
     border-radius: 4px;
     border: 2px solid #aa6330;
@@ -46,6 +65,7 @@
   }
 
   ul {
+    // 不加这个相对定位，后面的 input 的 checkbox 切换时会“错位”
     position: relative;
     li {
       display: flex;
@@ -53,44 +73,21 @@
       justify-content: flex-start;
       margin: 14px 0;
 
+      // 使用 checkbox 实现 二选一 样式切换
       input[type="checkbox"] {
         position: absolute;
         opacity: 0;
       }
-      input[type="checkbox"]:checked ~ .option-check1 {
-        background-color: #f0a338;
-        color: #fff;
-        // border: 4px inset #f0a338;
-        outline: 3px inset #f0a338;
-        border: transparent;
-      }
-      input[type="checkbox"]:checked ~ .option-check2 {
-        background-color: #fef0b5;
-        color: #000;
-        // border: 4px outset #fef0b5;
-        outline: 3px outset #fef0b5;
-        border: transparent;
-      }
-      .option-check1 {
-        background-color: #fef0b5;
-        color: #000;
-        // border: 4px outset #fef0b5;
-        outline: 3px outset #fef0b5;
-        border: transparent;
-      }
-      .option-check2 {
-        background-color: #f0a338;
-        color: #fff;
-        // border: 4px inset #f0a338;
-        outline: 3px inset #f0a338;
-        border: transparent;
-      }
-
+      input[type="checkbox"]:checked ~ .option-check1 { @include active; }
+      input[type="checkbox"]:checked ~ .option-check2 { @include no-active; }
+      .option-check1 { @include no-active; }
+      .option-check2 { @include active; }
     }
+    // 为选项需要换行的 <li> 单独配置样式(选项换行到下一列)
+    // 这个 wrap 是换行的意思。
     .option-wrap {
       flex-wrap: wrap;
       width: 751px;
-
       .option-title {
         width: 100%;
       }
@@ -109,8 +106,8 @@
         }
       }
     }
+    // 单独配置最后面的 是否勾选 样式
     .tick {
-      
       &.active .option-box::before {
         content: '✔';
         width: 24px;
@@ -136,5 +133,4 @@
       }
     }
   }
-  
 }
