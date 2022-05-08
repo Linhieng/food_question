@@ -25,7 +25,7 @@
   width: max-content;
   height: 14px;
   padding: 10px 4px;
-  margin-right: 10px;
+  margin-right: 38px;
   box-sizing: content-box;
   background-color: #fef0b5;
   line-height: 14px;
@@ -39,12 +39,18 @@
 .options-wrap .option-box.active {
   background-color: #f0a338;
   color: #fff;
+  outline: 3px inset #f0a338;
+  border-color: transparent;
 }
 
 .options-wrap .option-box input {
   background-color: transparent;
   border: none;
   outline: none;
+}
+
+.options-wrap ul {
+  position: relative;
 }
 
 .options-wrap ul li {
@@ -62,30 +68,34 @@
 .options-wrap ul li input[type="checkbox"]:checked ~ .option-check1 {
   background-color: #f0a338;
   color: #fff;
-  border: 4px inset #f0a338;
+  outline: 3px inset #f0a338;
+  border: transparent;
 }
 
 .options-wrap ul li input[type="checkbox"]:checked ~ .option-check2 {
   background-color: #fef0b5;
   color: #000;
-  border: 4px outset #fef0b5;
+  outline: 3px outset #fef0b5;
+  border: transparent;
 }
 
 .options-wrap ul li .option-check1 {
   background-color: #fef0b5;
   color: #000;
-  border: 4px outset #fef0b5;
+  outline: 3px outset #fef0b5;
+  border: transparent;
 }
 
 .options-wrap ul li .option-check2 {
   background-color: #f0a338;
   color: #fff;
-  border: 4px inset #f0a338;
+  outline: 3px inset #f0a338;
+  border: transparent;
 }
 
 .options-wrap ul .option-wrap {
   flex-wrap: wrap;
-  width: 730px;
+  width: 751px;
 }
 
 .options-wrap ul .option-wrap .option-title {
